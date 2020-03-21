@@ -11,56 +11,113 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <!-- main header -->
+    <!-- jumbotron main header -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">New York Times search</h1>
             <p class="lead"> </p>
         </div>
     </div>
-    <div class="formcontainer">
 
-        <form>
-            <div id="searchterm" class="form-group">
-                <label for="formGroupExampleInput">Search Term</label>
-                <input type="text" class="form-control" id="formGroupExampleInput"
-                    placeholder="">
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- search parameters panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search Parameters</h3>
+                </div>
+                <div class="panel-body">
+
+                    <form>
+
+                        <div id="searchterm" class="form-group">
+                            <label for="search">Search Term</label>
+                            <input type="text" class="form-control" id="search" placeholder="">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="sel1">Number of Records to Retrieve: </label>
+                            <select class="form-control" id="sel1">
+                                <option value=1>1</option>
+                                <!-- selected makes the default value 5 -->
+                                <option value=5 selected>5</option>
+                                <option value=10>10</option>
+                            </select>
+                        </div>
+
+
+                        <div id="startyear" class="form-group">
+                            <label for="startYear">Start Year(Optional)</label>
+                            <input type="text" class="form-control" id="startYear" placeholder="">
+                        </div>
+                        <div id="endyear" class="form-group">
+                            <label for="endYear">End Year(Optional)</label>
+                            <input type="text" class="form-control" id="endYear" placeholder="">
+                        </div>
+                    </form>
+
+                    <!-- type submit will let you hit enter as well -->
+                    <button type="submit" id="searchBtn">
+                        search
+                        <img id="searchicon" src="https://images-na.ssl-images-amazon.com/images/I/31KSwkqxXoL.png"
+                            alt="search icon">
+                    </button>
+                    <button id="clearBtn">
+                        <img id="clearicon"
+                            src="https://previews.123rf.com/images/iconscart/iconscart1903/iconscart190300018/118811393-trash-icon.jpg"
+                            alt="clear icon">
+                        clear results
+                    </button>
+                </div>
             </div>
-            <div id="recordsnumber" class="form-group">
-                <label for="formGroupExampleInput2">Number of Records to REtrieve</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2"
-                    placeholder="">
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Results Panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Search Results</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="well">
+                            <h2>Title</h2>
+                            <h3>Author</h3>
+                            <h4>Section</h4>
+                            <h4>Date</h4>
+                            <h4>Link</h4>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div id="startyear" class="form-group">
-                <label for="formGroupExampleInput">Start Year(Optional)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput"
-                    placeholder="">
-            </div>
-            <div id="endyear" class="form-group">
-                <label for="formGroupExampleInput2">End Year(Optional)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2"
-                    placeholder="">
-            </div>
-        </form>
-        <button id="searchBtn">
-            search
-            <img id= "searchicon" src="https://images-na.ssl-images-amazon.com/images/I/31KSwkqxXoL.png" alt="search icon" >
-        </button>
-        <button id="clearBtn">
-            <img id="clearicon" src="https://previews.123rf.com/images/iconscart/iconscart1903/iconscart190300018/118811393-trash-icon.jpg" alt="clear icon" >
-            clear results
-        </button>
+        </div>
 
     </div>
 
-    <div class="search results">
 
 
-    </div>
+
+
+
+
+
+
+
+
+
+
     <div class="footer">
         <h2 id="love">Made with lots and lots of ❤️️ by Team 2 </h2>
     </div>
