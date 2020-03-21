@@ -26,7 +26,7 @@
 
 
     <div class="row">
-        <div class="col-lg-12">
+        <div id="row1" class="col-lg-12">
 
             <!-- search parameters panel -->
             <div class="panel panel-default">
@@ -37,7 +37,7 @@
 
                     <form>
 
-                        <div id="searchterm" class="form-group">
+                        <div id="searchTerm" class="form-group">
                             <label for="search">Search Term</label>
                             <input type="text" class="form-control" id="search" placeholder="">
                         </div>
@@ -45,7 +45,7 @@
 
                         <div class="form-group">
                             <label for="sel1">Number of Records to Retrieve: </label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="numRecords">
                                 <option value=1>1</option>
                                 <!-- selected makes the default value 5 -->
                                 <option value=5 selected>5</option>
@@ -82,21 +82,17 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div id="row2" class="col-lg-12">
 
                 <!-- Results Panel -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Search Results</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="wellSection">
 
                         <div class="well">
-                            <h2>Title</h2>
-                            <h3>Author</h3>
-                            <h4>Section</h4>
-                            <h4>Date</h4>
-                            <h4>Link</h4>
+                        
                         </div>
                     </div>
                 </div>
@@ -110,19 +106,14 @@
 
 
 
-
-
-
-
-
-
-
-
     <div class="footer">
         <h2 id="love">Made with lots and lots of ❤️️ by Team 2 </h2>
     </div>
 
+<!-- to link to jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

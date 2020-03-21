@@ -18,3 +18,12 @@
     width:20px;
 }
 
+
+
+.well{
+    text-align: center;
+}
+
+#row1,#row2{
+    align-content: center;
+}
