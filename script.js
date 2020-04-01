@@ -21,7 +21,7 @@ var startYear = 0;
 var endYear = 0;
 
 // URL Base
-var queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=" + authKey;
+var queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + authKey;
 
 //Article counter, variable to track number of articles
 var articleCounter = 0;
@@ -39,38 +39,40 @@ function runQuery(numArticles, queryURL) {
             for (var i = 0; i < NYTData.response.docs.length; i++) {
                 console.log("HEADLINE");
                 console.log("----------------------------");
-                console.log(NYData.response.docs[i].headlines.main);
+                // console.log(NYTData.response.docs[i].headlines.main);
                 console.log("----------------------------");
-                console.log(NYData.response.docs[i].section_name);
+                console.log(NYTData.response.docs[i].section_name);
                 console.log("----------------------------");
-                console.log(NYData.response.docs[i].pub_date);
+                console.log(NYTData.response.docs[i].pub_date);
                 console.log("----------------------------");
-                console.log(NYData.response.docs[i].byline.original);
+                console.log(NYTData.response.docs[i].byline.original);
                 console.log("----------------------------");
-                console.log(NYData.response.docs[i].web_url);
+                console.log(NYTData.response.docs[i].web_url);
 
 //start dumping to HTML here
 var wellSection = $("<div>");
-wellSection.addclass("well");
+wellSection.addClass("well");
 wellSection.attr("id", "articlewell-" + i)
 $("#wellSection").append(wellSection);
 
+console.log(NYTData);
+
 if(NYTData.response.docs[i].headline != "null"){
-    console.log(NYData.response.docs[i].headline.main);
-    $("#wellSection-"+ i).append("<h3>" +NYTData.response.docs[i].headline.main + "</h3>")
+    console.log(NYTData.response.docs[i].headline.main);
+    wellSection.append("<h3>" +NYTData.response.docs[i].headline.main + "</h3>")
 
 }
 
 if(NYTData.response.docs[i].byline.original && NYTData.response.docs[i].byline.hasOwnProperty("original")){
     console.log(NYTData.response.docs[i].byline.original)
-    $("#wellSection-"+ i).append("<h5>" +NYTData.response.docs[i].byline.original + "</h5>")
+    wellSection.append("<h5>" +NYTData.response.docs[i].byline.original + "</h5>")
 }
 
 
 //attach the content to the appropriate well
-$("#wellSection-"+ i).append("<h5>" +NYTData.response.docs[i].ection_name + "</h5>")
-$("#wellSection-"+ i).append("<h5>" +NYTData.response.docs[i].pub_date + "</h5>")
-$("#wellSection-"+ i).append("<a href=" +NYTData.response.docs[i].web_url+ ">"+NYTData.response.docs[i].web_url+ "</a>")
+wellSection.append("<h5>" +NYTData.response.docs[i].ection_name + "</h5>")
+wellSection.append("<h5>" +NYTData.response.docs[i].pub_date + "</h5>")
+wellSection.append("<a href=" +NYTData.response.docs[i].web_url+ ">"+NYTData.response.docs[i].web_url+ "</a>")
 
             }
             //logging to console
@@ -86,12 +88,12 @@ $("#wellSection-"+ i).append("<a href=" +NYTData.response.docs[i].web_url+ ">"+N
 $("#searchBtn").on('click', function () {
 
     // alert: ("test");
-    searchTerm = $("#search").val().trim();
-    console.log(queryTerm);
+    var searchTerm = $("#search").val().trim();
+    console.log(searchTerm);
 
 
     // add in the seach term
-    var newURL = queryURLBase + "&q=" + queryTerm;
+    var newURL = queryURLBase + "&q=" + searchTerm;
     console.log(newURL);
     // runQuery(10, "http://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=Tw6y0f81zYApuWpXS6TF4o1Dk43VdxyD");
 
@@ -104,7 +106,7 @@ $("#searchBtn").on('click', function () {
 
     if (parseInt(startYear)) {
         //add the date information to the URL
-        startYear = startYear + 0101;
+        startYear = startYear + "0101";
 
         //add the date information to the URL
         newURL = newURL + "&begin_date=" + startYear;
