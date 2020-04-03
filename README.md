@@ -1,4 +1,4 @@
-# New York Times activity
+# [New York Times activity](https://zahraaliaghazadeh.github.io/nytactivity/)
 
 ## Search a keyword in certain time period in years ,for articles in NYT
 This application is using the API from New York Times and is giving the ability to search for a keyword. It will then give the user articles based on their searched keyword.
